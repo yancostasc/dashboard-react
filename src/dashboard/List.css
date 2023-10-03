@@ -19,6 +19,12 @@
   padding-right: 50%;
 }
 
-.ant-table-wrapper {
+#root
+  > div
+  > main
+  > div
+  > div.cardList
+  > div.customTable
+  > div.ant-spin-nested-loading {
   width: 100%;
 }
