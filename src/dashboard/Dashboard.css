@@ -1,0 +1,96 @@
+.label {
+  height: 42px;
+  margin-left: 200px;
+}
+
+.label .text-wrapper {
+  color: #272727;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 28px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 42px;
+  position: fixed;
+  top: 0;
+  white-space: nowrap;
+}
+
+.icon {
+  color: #272727;
+  background: none;
+}
+
+.ant-avatar.ant-avatar-icon {
+  font-size: 20px;
+}
+
+.iconsList {
+  flex: none;
+  padding-right: 200px;
+}
+
+.ant-badge .ant-badge-dot.ant-scroll-number {
+  margin: 6px;
+}
+
+.userLabel {
+  font-weight: 500;
+}
+
+.filmsList {
+  padding: 10px 35px 15px 35px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.cardList {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 32px;
+}
+
+.box {
+  background-color: #03363d0f;
+  border-radius: 6px;
+  padding: 8px 8px 8px 8px;
+}
+
+.filmTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.filmDate {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ant-list-grid .ant-col > .ant-list-item {
+  display: flex;
+  padding: 8px 8px 8px 12px;
+}
+
+.cardTitle {
+  height: 22px;
+  width: 58px;
+  color: #00000073;
+  font-size: 14px;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.cardCount {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ant-card:hover,
+.ant-card:active {
+  cursor: pointer;
+  box-shadow: 2px 4px 4px #ea580c66 !important;
+}

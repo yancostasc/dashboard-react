@@ -1,0 +1,52 @@
+.sidebar-bg {
+  background: #03363d;
+  /* width: 300px; */
+  height: 100%;
+  position: relative;
+  background: #03363d;
+  box-shadow: 8px 13px 40px 0px #f1efff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.custom-menu {
+  background: #03363d;
+  color: #fff;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-menu .ant-menu-item:hover {
+  background-color: #044751;
+}
+
+.custom-menu .ant-menu-item-selected {
+  background-color: transparent;
+}
+
+.logo-svg {
+  width: 115px;
+  height: 35px;
+  margin-top: 77px;
+  margin-bottom: 77px;
+  fill: #fff;
+}
+
+.label .text-wrapper {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.logout-item {
+  color: #cc4141;
+}
