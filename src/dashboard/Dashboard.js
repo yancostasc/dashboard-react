@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, List, Typography, Avatar, Card, Badge } from 'antd';
+import { Row, Col, List, Typography, Avatar, Card, Badge, Spin } from 'antd';
 import { SearchOutlined, BellOutlined  } from '@ant-design/icons';
 import { format } from 'date-fns';
 import './Dashboard.css';
@@ -15,14 +15,21 @@ import StarshipList from './StarshipList';
 const Dashboard = () => {
   const [films, setFilms] = useState([]);
 
-  const [people, setPeople] = useState([]);
-  const [planet, setPlanets] = useState([]);
-  const [species, setSpecies] = useState([]);
-  const [starships, setStarships] = useState([]);
+  const [people, setPeople] = useState(null);
+  const [planets, setPlanets] = useState(null);
+  const [species, setSpecies] = useState(null);
+  const [starships, setStarships] = useState(null);
+
+  const [loadingPeople, setLoadingPeople] = useState(true);
+  const [loadingPlanets, setLoadingPlanets] = useState(true);
+  const [loadingSpecies, setLoadingSpecies] = useState(true);
+  const [loadingStarships, setLoadingStarships] = useState(true);
 
   const [userName, setUserName] = useState('');
   const [userPicture, setUserPicture] = useState('');
   const [selectedCard, setSelectedCard] = useState(null);
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleCardClick = (cardTitle) => {
     setSelectedCard(cardTitle);
@@ -40,23 +47,38 @@ const Dashboard = () => {
 
       fetch('https://swapi.dev/api/films')
       .then(response => response.json())
-      .then(films => setFilms(films.results)); 
+      .then(films => {
+        setFilms(films.results);
+        setIsLoading(false);
+      });
 
       fetch('https://swapi.dev/api/people')
       .then(response => response.json())
-      .then(people => setPeople(people.count));
+      .then(peopleData => {
+        setPeople(peopleData.count);
+        setLoadingPeople(false);
+      });
 
-      fetch('https://swapi.dev/api/planets')
+    fetch('https://swapi.dev/api/planets')
       .then(response => response.json())
-      .then(planets => setPlanets(planets.count));
+      .then(planetsData => {
+        setPlanets(planetsData.count);
+        setLoadingPlanets(false);
+      });
 
-      fetch('https://swapi.dev/api/species')
+    fetch('https://swapi.dev/api/species')
       .then(response => response.json())
-      .then(species => setSpecies(species.count));
+      .then(speciesData => {
+        setSpecies(speciesData.count);
+        setLoadingSpecies(false);
+      });
 
-      fetch('https://swapi.dev/api/starships')
+    fetch('https://swapi.dev/api/starships')
       .then(response => response.json())
-      .then(starships => setStarships(starships.count));
+      .then(starshipsData => {
+        setStarships(starshipsData.count);
+        setLoadingStarships(false);
+      });
   }, []);
 
   const formatDate = (dateString) => {
@@ -85,6 +107,7 @@ const Dashboard = () => {
 
       <div className='filmsList'>
         <h3>Filmes</h3>
+        <Spin spinning={isLoading}>
         <List
           grid={{ gutter: 12, column: 2 }}
           dataSource={films}
@@ -95,35 +118,44 @@ const Dashboard = () => {
             </List.Item>
           )}
         />
+      </Spin>
       </div>
 
       <div className='cardList'>
         <Row gutter={16}>
         <Col span={6}>
           <Card bordered={false} onClick={() => handleCardClick('Pessoas')}>
-            <span className='cardTitle'>Pessoas</span><br></br>
-            <h1 className="cardCount"><img src={People} alt="Logo"/> {people}</h1>
+            <Spin spinning={loadingPeople}>
+              <span className='cardTitle'>Pessoas</span><br></br>
+              <h1 className="cardCount"><img src={People} alt="Logo"/> {people}</h1>
+            </Spin>
           </Card>
         </Col>
 
         <Col span={6}>
           <Card bordered={false} onClick={() => handleCardClick('Planetas')}>
-            <span className='cardTitle'> Planetas</span><br></br>
-            <h1 className="cardCount"><img src={Planet} alt="Logo"/> {planet}</h1>
+            <Spin spinning={loadingPlanets}>
+              <span className='cardTitle'> Planetas</span><br></br>
+              <h1 className="cardCount"><img src={Planet} alt="Logo"/> {planets}</h1>
+             </Spin>
           </Card>
         </Col>
 
         <Col span={6}>
           <Card bordered={false} onClick={() => handleCardClick('Espécies')}>
-            <span className='cardTitle'>Espécies</span><br></br>
-            <h1 className="cardCount"><img src={Species} alt="Logo"/> {species}</h1>
+            <Spin spinning={loadingSpecies}>
+              <span className='cardTitle'>Espécies</span><br></br>
+              <h1 className="cardCount"><img src={Species} alt="Logo"/> {species}</h1>
+            </Spin>
           </Card>
         </Col>
 
         <Col span={6}>
           <Card bordered={false} onClick={() => handleCardClick('Naves')}>
-            <span className='cardTitle'>Naves</span><br></br>
-            <h1 className="cardCount"><img src={Starship} alt="Logo"/> {starships}</h1>
+            <Spin spinning={loadingStarships}>
+              <span className='cardTitle'>Naves</span><br></br>
+              <h1 className="cardCount"><img src={Starship} alt="Logo"/> {starships}</h1>
+            </Spin>
           </Card>
         </Col>
 
