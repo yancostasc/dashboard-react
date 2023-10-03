@@ -97,9 +97,9 @@ const Dashboard = () => {
         </Col>
 
         <Col span={12} className="iconsList">
-          <Avatar icon={<SearchOutlined />} className="icon" />
+          <Avatar src={<SearchOutlined />} size={30} className="icon " />
           <Badge dot>
-            <Avatar icon={<BellOutlined />} className="icon" />
+            <Avatar src={<BellOutlined />} size={30} className="icon" />
           </Badge>
           <Avatar className="icon" size={30} src={userPicture} />
           <span className="userLabel"> {userName} </span>

@@ -26,8 +26,10 @@
 }
 
 .iconsList {
-  flex: none;
+  display: flex;
+  flex: inherit;
   padding-right: 200px;
+  align-items: center;
 }
 
 .ant-badge .ant-badge-dot.ant-scroll-number {
@@ -36,6 +38,7 @@
 
 .userLabel {
   font-weight: 500;
+  padding: 4px;
 }
 
 .filmsList {
@@ -93,4 +96,8 @@
 .ant-card:active {
   cursor: pointer;
   box-shadow: 2px 4px 4px #ea580c66 !important;
+}
+
+.ant-avatar:nth-child(3) {
+  margin-left: 5px;
 }
