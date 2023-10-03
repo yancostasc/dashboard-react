@@ -7,9 +7,9 @@ This is a React and JavaScript dashboard project that provides information relat
 - Immediate display of information about movies upon entering the dashboard.
 - Intuitive navigation with clickable cards for different sections of the dashboard, such as characters, starships, planets, and species.
 - Integration with the SWAPI API to fetch data from the Star Wars universe.
-- Dynamic display of information about characters, starships, planets, and species.
+- Display of information about characters, starships, planets, and species.
 - Use of key technologies, including React, JavaScript, Ant Design, HTML, and CSS.
-- Work in Progress (WIP) - Dynamically generated pages for movie details, character details, starship details, planet details, and species details.
+- Work in Progress (IDEA) - Pages for more movie details, character details, starship details, planet details, and species details.
 
 ## Prerequisites
 
