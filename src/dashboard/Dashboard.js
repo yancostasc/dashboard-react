@@ -141,7 +141,11 @@ const Dashboard = () => {
           </Col>
 
           <Col span={6}>
-            <Card bordered={false} onClick={() => handleCardClick("Planetas")}>
+            <Card
+              className="cardPlanets"
+              bordered={false}
+              onClick={() => handleCardClick("Planetas")}
+            >
               <Spin spinning={loadingPlanets}>
                 <span className="cardTitle"> Planetas</span>
                 <br></br>
@@ -153,7 +157,11 @@ const Dashboard = () => {
           </Col>
 
           <Col span={6}>
-            <Card bordered={false} onClick={() => handleCardClick("Espécies")}>
+            <Card
+              className="cardSpecies"
+              bordered={false}
+              onClick={() => handleCardClick("Espécies")}
+            >
               <Spin spinning={loadingSpecies}>
                 <span className="cardTitle">Espécies</span>
                 <br></br>
@@ -165,7 +173,11 @@ const Dashboard = () => {
           </Col>
 
           <Col span={6}>
-            <Card bordered={false} onClick={() => handleCardClick("Naves")}>
+            <Card
+              className="cardStarships"
+              bordered={false}
+              onClick={() => handleCardClick("Naves")}
+            >
               <Spin spinning={loadingStarships}>
                 <span className="cardTitle">Naves</span>
                 <br></br>

@@ -98,6 +98,21 @@
   box-shadow: 2px 4px 4px #ea580c66 !important;
 }
 
+.cardPlanets:hover,
+.cardPlanets:active {
+  box-shadow: 2px 4px 4px rgba(99, 102, 241, 0.4) !important;
+}
+
+.cardSpecies:hover,
+.cardSpecies:active {
+  box-shadow: 2px 4px 4px rgba(247, 227, 162, 1) !important;
+}
+
+.cardStarships:hover,
+.cardStarships:active {
+  box-shadow: 2px 4px 4px rgba(12, 196, 182, 0.4) !important;
+}
+
 .ant-avatar:nth-child(3) {
   margin-left: 5px;
 }
